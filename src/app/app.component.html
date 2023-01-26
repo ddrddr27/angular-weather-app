@@ -1,10 +1,61 @@
 <div class="container">
   <div class="upper-data">
-<img src="" *ngIf = "14 > 15"> 
-<img src="" *ngIf = "14 <= 15">
+<img src="/assets/night.jpg" *ngIf = "14 > 15"> 
+<img src="/assets/night.jpg" *ngIf = "14 <= 15">
+<div class="weather-data">
+  <div class="location">Prague</div>
+  <div class="temperature">{{ 1.4 | number: '1.0'}}°C</div>
+</div>
+
   </div>
   <div class="lower-data">
+<div class="more-info-label">More information</div>
+<div class="more-info-container">
+   <!-- Block l min temp-->
+  <div class="info-block">
+    <div class="info-block-label">
+      <img src="https://cdn-icons-png.flaticon.com/512/4851/4851827.png" alt="https://www.flaticon.com/free-icon/low-temperature_4851827?term=temperature&page=1&position=85&origin=search&related_id=4851827" >
+      <span>min</span>
+    </div>
+   
+    <div class="info-block-value">
+      1°C
+    </div>
+  </div>
+    <!-- Block 2 max temp-->
+  <div class="info-block">
+    <div class="info-block-label">
+      <img src="https://cdn-icons-png.flaticon.com/512/4813/4813751.png" alt="https://www.flaticon.com/free-icon/fever_4813751?term=temperature&page=1&position=73&origin=search&related_id=4813751" >
+      <span>max</span>
+    </div>
+ 
+    <div class="info-block-value">
+      10°C
+    </div>
+  </div>
+     <!-- Block 3 humidity-->
+  <div class="info-block">
+    <div class="info-block-label">
+      <img src="https://cdn-icons-png.flaticon.com/512/2828/2828802.png" alt="https://www.flaticon.com/free-icon/humidity_2828802?term=humidity&page=1&position=12&origin=search&related_id=2828802">
+      <span>humidity</span>
+    </div>
 
+    <div class="info-block-value">
+      77%
+    </div>
+  </div>
+    <!-- Block 4 wind-speed-->
+  <div class="info-block">
+    <div class="info-block-label">
+      <img src="https://cdn-icons-png.flaticon.com/512/2204/2204367.png" alt="https://www.flaticon.com/free-icon/wind_2204367?term=wind&page=1&position=10&origin=search&related_id=2204367">
+      <span>wind</span>
+    </div>
+
+    <div class="info-block-value">
+      9 km/h
+    </div>
+  </div>
+</div>
   </div>
 </div>
 
