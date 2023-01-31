@@ -4,7 +4,7 @@
 <img src="/assets/night.jpg" *ngIf = "14 <= 15">
 <div class="weather-data">
   <div class="location">Prague</div>
-  <div class="temperature">{{ 1.4 | number: '1.0'}}°C</div>
+  <div class="temperature">{{ WeatherData.temp }}°C</div>
 </div>
 
   </div>
@@ -19,7 +19,7 @@
     </div>
    
     <div class="info-block-value">
-      1°C
+        {{ WeatherData.min_temp }}°C
     </div>
   </div>
     <!-- Block 2 max temp-->
@@ -30,7 +30,7 @@
     </div>
  
     <div class="info-block-value">
-      10°C
+        {{ WeatherData.max_temp }}°C
     </div>
   </div>
      <!-- Block 3 humidity-->
@@ -41,7 +41,7 @@
     </div>
 
     <div class="info-block-value">
-      77%
+        {{ WeatherData.humidity }}%
     </div>
   </div>
     <!-- Block 4 wind-speed-->
@@ -52,7 +52,7 @@
     </div>
 
     <div class="info-block-value">
-      9 km/h
+        {{ WeatherData.humidity }} km/h
     </div>
   </div>
 </div>

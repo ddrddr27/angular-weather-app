@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+
 import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
@@ -8,24 +8,21 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class WeatherServiceService {
 
-const environment = {
-  production: false,
-  weatherApiBaseUrl: 'https://open-weather13.p.rapidapi.com/city/Prague',
-  XRapidAPIHostHeaderValue: 'open-weather13.p.rapidapi.com',
-  XRapidAPIHostHeaderName: 'X-RapidAPI-Host',
-  XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',
-  XRapidAPIKeyHeaderValue: 'c5fe693a41mshb08005638495b4bp111617jsn9c097ba6642d'
-};
-
   constructor(private http: HttpClient) { }
+  
+  		// API Call
+      let headers = new HttpHeaders({
+        'x-rapidapi-host': 'foreca-weather.p.rapidapi.com',
+        'x-rapidapi-key': 'c5fe693a41mshb08005638495b4bp111617jsn9c097ba6642d'
+      });
+      this.http
+        .get<any>('https://foreca-weather.p.rapidapi.com/location/search/prague?lang=en&country=cz', {
+          headers: headers
+        })
+        .subscribe(data => {
+          console.log(data);
+        });
 
+  
 
-
-  getWeatherData(cityName:string):Observable<WeatherData>{
-    return this.http.get<WeatherData>(environment.weatherApiBaseUrl+'/city/'+cityName, {
-      headers: new HttpHeaders()
-      .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
-      .set(environment.XRapidAPIKeyHeaderName,environment.XRapidAPIKeyHeaderValue),
-    });
-   }
 }
